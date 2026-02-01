@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCM.API", "PCM.API\PCM.API.csproj", "{7F804916-6BA0-4054-B96B-1E240BA233BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCM.Core", "PCM.Core\PCM.Core.csproj", "{18D1178F-816B-44A1-8FB3-22EDD2FD40E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCM.Infrastructure", "PCM.Infrastructure\PCM.Infrastructure.csproj", "{89869CCF-A331-4653-AE66-313105A75F3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F804916-6BA0-4054-B96B-1E240BA233BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F804916-6BA0-4054-B96B-1E240BA233BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F804916-6BA0-4054-B96B-1E240BA233BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F804916-6BA0-4054-B96B-1E240BA233BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18D1178F-816B-44A1-8FB3-22EDD2FD40E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D1178F-816B-44A1-8FB3-22EDD2FD40E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D1178F-816B-44A1-8FB3-22EDD2FD40E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18D1178F-816B-44A1-8FB3-22EDD2FD40E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89869CCF-A331-4653-AE66-313105A75F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89869CCF-A331-4653-AE66-313105A75F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89869CCF-A331-4653-AE66-313105A75F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89869CCF-A331-4653-AE66-313105A75F3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

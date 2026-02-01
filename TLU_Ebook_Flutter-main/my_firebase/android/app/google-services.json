@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "448484821186",
+    "project_id": "tlu-firebase-44568",
+    "storage_bucket": "tlu-firebase-44568.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:448484821186:android:2b9ea771d22646ca56935b",
+        "android_client_info": {
+          "package_name": "com.example.my_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5LxkcwsWkKqSqALU6IgzSwWCG_RQ-YOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

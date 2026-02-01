@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # SQL Server Database
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: pcm-db
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=PCM@Secure2026!
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    restart: unless-stopped
+    healthcheck:
+      test: /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "PCM@Secure2026!" -C -Q "SELECT 1" || exit 1
+      interval: 10s
+      timeout: 3s
+      retries: 10
+      start_period: 30s
+
+  # PCM Backend API
+  pcm-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: pcm-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:80
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=PCM_DB;User Id=sa;Password=PCM@Secure2026!;TrustServerCertificate=True
+      - Jwt__Key=PCM_Secret_Key_2026_VotThuPhoNui_Pickleball_Club_Management_System_SuperSecretKey123!@#
+      - Jwt__Issuer=PCM
+      - Jwt__Audience=PCM_Mobile
+    ports:
+      - "5000:80"
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Nginx Reverse Proxy + Web
+  nginx:
+    image: nginx:alpine
+    container_name: pcm-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./deploy/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./deploy/www:/var/www/html:ro
+      - ./deploy/downloads:/var/www/downloads:ro
+    depends_on:
+      - pcm-api
+    restart: unless-stopped
+
+volumes:
+  sqlserver_data:
